@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+			integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+			crossorigin="anonymous"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./Assets/CSS/style.css" />
+		<title>Work Day Scheduler</title>
+	</head>
+
+	<body>
+		<header class="jumbotron">
+			<h1 class="display-3">Work Day Scheduler</h1>
+			<p class="lead">A simple calendar app for scheduling your work day</p>
+			<p id="currentDay" class="lead"></p>
+		</header>
+		<div class="container">
+			<!-- Timeblocks go here -->
+
+			<!-- 9am -->
+			<div class="row">
+				<p class="col-1 time-block" id="nine-am-p">9am</p>
+				<textarea
+					class="col-10 description"
+					name="nine-am-text"
+					id="nine-am-text"
+					cols="30"
+					rows="10"
+				></textarea>
+				<button type="button" class="saveBtn col-1" id="nine-am-btn">
+					<img src="./Assets/Images/floppy-disk-svgrepo-com.svg" alt="" />
+				</button>
+			</div>
+
+			<!-- 10am -->
+			<div class="row">
+				<p class="col-1 time-block" id="ten-am-p">10am</p>
+				<textarea
+					class="col-10 description"
+					name="ten-am-text"
+					id="ten-am-text"
+					cols="30"
+					rows="10"
+				></textarea>
+				<button type="button" class="saveBtn col-1" id="ten-am-btn">
+					<img src="./Assets/Images/floppy-disk-svgrepo-com.svg" alt="" />
+				</button>
+			</div>
+
+			<!-- 11am -->
+			<div class="row">
+				<p class="col-1 time-block" id="eleven-am-p">11am</p>
+				<textarea
+					class="col-10 description"
+					name="eleven-am-text"
+					id="eleven-am-text"
+					cols="30"
+					rows="10"
+				></textarea>
+				<button type="button" class="saveBtn col-1" id="eleven-am-btn">
+					<img src="./Assets/Images/floppy-disk-svgrepo-com.svg" alt="" />
+				</button>
+			</div>
+
+			<!-- 12pm -->
+			<div class="row">
+				<p class="col-1 time-block" id="twelve-pm-p">12pm</p>
+				<textarea
+					class="col-10 description"
+					name="twelve-pm-text"
+					id="twelve-pm-text"
+					cols="30"
+					rows="10"
+				></textarea>
+				<button type="button" class="saveBtn col-1" id="twelve-pm-btn">
+					<img src="./Assets/Images/floppy-disk-svgrepo-com.svg" alt="" />
+				</button>
+			</div>
+
+			<!-- 1pm -->
+			<div class="row">
+				<p class="col-1 time-block" id="one-pm-p">1pm</p>
+				<textarea
+					class="col-10 description"
+					name="one-pm-text"
+					id="one-pm-text"
+					cols="30"
+					rows="10"
+				></textarea>
+				<button type="button" class="saveBtn col-1" id="one-pm-btn">
+					<img src="./Assets/Images/floppy-disk-svgrepo-com.svg" alt="" />
+				</button>
+			</div>
+
+			<!-- 2pm -->
+			<div class="row">
+				<p class="col-1 time-block" id="two-pm-p">2pm</p>
+				<textarea
+					class="col-10 description"
+					name="two-pm-text"
+					id="two-pm-text"
+					cols="30"
+					rows="10"
+				></textarea>
+				<button type="button" class="saveBtn col-1" id="two-pm-btn">
+					<img src="./Assets/Images/floppy-disk-svgrepo-com.svg" alt="" />
+				</button>
+			</div>
+
+			<!-- 3pm -->
+			<div class="row">
+				<p class="col-1 time-block" id="three-pm-p">3pm</p>
+				<textarea
+					class="col-10 description"
+					name="three-pm-text"
+					id="three-pm-text"
+					cols="30"
+					rows="10"
+				></textarea>
+				<button type="button" class="saveBtn col-1" id="three-pm-btn">
+					<img src="./Assets/Images/floppy-disk-svgrepo-com.svg" alt="" />
+				</button>
+			</div>
+
+			<!-- 4pm -->
+			<div class="row">
+				<p class="col-1 time-block" id="four-pm-p">4pm</p>
+				<textarea
+					class="col-10 description"
+					name="four-pm-text"
+					id="four-pm-text"
+					cols="30"
+					rows="10"
+				></textarea>
+				<button type="button" class="saveBtn col-1" id="four-pm-btn">
+					<img src="./Assets/Images/floppy-disk-svgrepo-com.svg" alt="" />
+				</button>
+			</div>
+
+			<!-- 5pm -->
+			<div class="row">
+				<p class="col-1 border-bottom border-dark time-block" id="five-pm-p">
+					5pm
+				</p>
+				<textarea
+					class="col-10 border-bottom border-dark description"
+					name="five-pm-text"
+					id="five-pm-text"
+					cols="30"
+					rows="10"
+				></textarea>
+				<button type="button" s class="saveBtn col-1" id="five-pm-btn">
+					<img src="./Assets/Images/floppy-disk-svgrepo-com.svg" alt="" />
+				</button>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+	</body>
+</html>
