@@ -4,15 +4,13 @@ var loadTasks = function () {
 
 	if (savedTasks === null) {
 	} else {
-		$("#nine-am-text").text(savedTasks[0].text);
-		$("#ten-am-text").text(savedTasks[1].text);
-		$("#eleven-am-text").text(savedTasks[2].text);
-		$("#twelve-pm-text").text(savedTasks[3].text);
-		$("#one-pm-text").text(savedTasks[4].text);
-		$("#two-pm-text").text(savedTasks[5].text);
-		$("#three-pm-text").text(savedTasks[6].text);
-		$("#four-pm-text").text(savedTasks[7].text);
-		$("#five-pm-text").text(savedTasks[8].text);
+		var textAreas = $("textarea");
+
+		for (var i = 0; i < textAreas.length; i++) {
+			var area = textAreas[i];
+
+			area.textContent = savedTasks[i].text;
+		}
 	}
 };
 loadTasks();
