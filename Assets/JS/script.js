@@ -1,28 +1,10 @@
-//* Load Tasks Function
-var loadTasks = function () {
-	var savedTasks = JSON.parse(localStorage.getItem("tasks"));
-
-	if (savedTasks === null) {
-	} else {
-		$("#nine-am-text").text(savedTasks[0].text);
-		$("#ten-am-text").text(savedTasks[1].text);
-		$("#eleven-am-text").text(savedTasks[2].text);
-		$("#twelve-pm-text").text(savedTasks[3].text);
-		$("#one-pm-text").text(savedTasks[4].text);
-		$("#two-pm-text").text(savedTasks[5].text);
-		$("#three-pm-text").text(savedTasks[6].text);
-		$("#four-pm-text").text(savedTasks[7].text);
-		$("#five-pm-text").text(savedTasks[8].text);
-	}
-};
-loadTasks();
-
 // *Time Coding Functions
 var getTime = function () {
 	var time = moment();
 	time = time.format("k");
 	time = parseInt(time);
 	now = time;
+	console.log(now);
 
 	var textAreaEl = $("textarea");
 
@@ -49,39 +31,39 @@ var updateTime = setInterval(getTime, 3000);
 // * Local Storage Array
 var tasks = [
 	{
-		time: "9",
+		time: "nine-am-text",
 		text: "",
 	},
 	{
-		time: "10",
+		time: "ten-am-text",
 		text: "",
 	},
 	{
-		time: "11",
+		time: "eleven-am-text",
 		text: "",
 	},
 	{
-		time: "12",
+		time: "twelve-pm-text",
 		text: "",
 	},
 	{
-		time: "13",
+		time: "one-pm-text",
 		text: "",
 	},
 	{
-		time: "14",
+		time: "two-pm-text",
 		text: "",
 	},
 	{
-		time: "15",
+		time: "three-pm-text",
 		text: "",
 	},
 	{
-		time: "16",
+		time: "four-pm-text",
 		text: "",
 	},
 	{
-		time: "17",
+		time: "five-pm-text",
 		text: "",
 	},
 ];
@@ -91,21 +73,34 @@ var saveTasks = function () {
 	localStorage.setItem("tasks", JSON.stringify(tasks));
 };
 
-//* Save Button
+//TODO Load Tasks Function
+var loadTasks = function () {
+	var savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+	console.log(typeof savedTasks);
+
+	for (var i = 0; i < savedTasks.length; i++) {}
+};
+loadTasks();
+
+// * Save Button
 $(".container").on("click", "button", function (event) {
 	event.preventDefault();
+	loadTasks();
+	// Target row of button
+	var row = event.target.closest(".row");
+	console.log(row);
+	// Target value of textarea
+	var newText = row.childNodes[3].value;
+	console.log(row.childNodes);
+	// Set textarea value to new text
+	row.childNodes[3].textContent = newText;
 
-	var textAreas = $("textarea");
+	// Get data-time
+	var dataTimeValue = row.childNodes[3].getAttribute("data-time");
+	// Turn to int
+	dataTimeValue = parseInt(dataTimeValue);
 
-	for (var i = 0; i < textAreas.length; i++) {
-		var area = textAreas[i];
-
-		let newText = area.value;
-
-		area.textContent = newText;
-
-		tasks[i].text = newText;
-
-		saveTasks();
-	}
+	tasks[dataTimeValue - 9].text = newText;
+	saveTasks();
 });
