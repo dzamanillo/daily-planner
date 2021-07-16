@@ -1,3 +1,8 @@
+var currentDayEl = document.querySelector("#currentDay");
+var currentDate = moment().format("dddd, MMMM" + " " + "Do");
+console.log(currentDate);
+currentDayEl.textContent = currentDate;
+
 //* Load Tasks Function
 var loadTasks = function () {
 	var savedTasks = JSON.parse(localStorage.getItem("tasks"));
